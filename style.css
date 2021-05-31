@@ -5,17 +5,65 @@ h1{
     font-size:xx-large;
     color:black;
     text-shadow: 2px 2px gray;
+    background-color: red;
 }
+.flex-container{
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    align-content: space-between;
+    position: fixed;
+    width: 900px;
+}
+section > div{
+    flex: 1 1 100px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 550px 550px 550px;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 100px; 
+    grid-row-gap: 10px; 
+    justify-content: left;
+}
+.grid-item:nth-child(1){
+    background: rgb(27, 26, 26);
+    grid-column: 1 / span3;
+  }
+.grid-item:nth-child(2){
+  background: rgb(27, 26, 26);
+}
+.grid-item:nth-child(3){
+  background: rgb(27, 26, 26);
+}
+.grid-item:nth-child(4){
+  background: rgb(27, 26, 26);
+}
+.grid-item:nth-child(5){
+    background: white;
+    grid-column: 1 / span 3;
+  }
 .headings{
     background-color:red;
 }
 h3{
     background-color:red;
 }
-ul{
+/*ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
     background-color: white;
-    width: 300px;
+    width: 400px;
 }
+li{
+    display: inline;
+}*/
 #website{
     background-color:white;
     width: 300px;
@@ -25,8 +73,19 @@ blockquote{
     width: 200px;
 }
 li{
-    background-color: white;
-    width: 300px;
+    width: 525px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(37, 34, 34);
+    box-sizing: content-box;
+    margin: 20px;
+    background-color: gray;
+    font-family:monospace;
+    font-size: 20px;
+    outline-style: solid;
+    outline-color: red;
+    text-indent: 50px;
 }
 figcaption{
     background-color: white;
@@ -55,10 +114,25 @@ p{
     outline-color: red;
     text-indent: 50px;
 }
-p1{
-    background-color: white;
-}
 body{
-    background-image: url(https://www.stickershoppe.com/mm5/graphics/00000001/SS97061.jpg);
+    /*background-image: url(https://www.stickershoppe.com/mm5/graphics/00000001/SS97061.jpg);*/
     opacity: 1.5;
+}
+
+@media screen and (max-width: 600px){
+    .flex-container{
+        float: none;
+        width: 15%;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 600px){
+    .grid-container{
+        display: list-item;
+        grid-template-columns: 300px;
+        grid-template-rows: 300px;
+        grid-column-gap: 100px; 
+        grid-row-gap: 10px; 
+        justify-content: left;
+    }
 }
